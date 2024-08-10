@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <TargetPlatformVersion>10.0.22621.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
+    <RootNamespace>WinDeskClockFlyout</RootNamespace>
+    <AssemblyName>WinDeskClockFlyout</AssemblyName>
+    <LangVersion>12.0</LangVersion>
+    <ApplicationManifest>App.manifest</ApplicationManifest>
+    <UseWindowsForms>true</UseWindowsForms>
+    <!-- Add workaround for WinRT support in the old .NET SDK -->
+    <SupportedOSPlatformVersion>$(TargetPlatformMinVersion)</SupportedOSPlatformVersion>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Mile.Xaml" Version="2.2.1017" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\WinDeskClockFlyout.Core\WinDeskClockFlyout.Core.csproj" />
+  </ItemGroup>
+
+</Project>
