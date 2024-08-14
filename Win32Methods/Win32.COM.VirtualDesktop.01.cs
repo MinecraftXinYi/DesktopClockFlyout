@@ -39,7 +39,7 @@ public class VirtualDesktopManager
 
     public VirtualDesktopManager()
     {
-        CVirtualDesktopManager cvdManager = new();
+        CVirtualDesktopManager cvdManager = new ();
         ivdManager = (IVirtualDesktopManager)cvdManager;
     }
 
