@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinDeskClockFlyout", "WinDeskClockFlyout\WinDeskClockFlyout.csproj", "{7FD6EE08-3E37-4B72-A696-7887FDD03319}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinDeskClockFlyout.Core", "WinDeskClockFlyout.Core\WinDeskClockFlyout.Core.csproj", "{32F5A6D4-989F-4370-80E0-7B0360835405}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinDeskClockFlyout.Core", "WinDeskClockFlyout.Core\WinDeskClockFlyout.Core.csproj", "{32F5A6D4-989F-4370-80E0-7B0360835405}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

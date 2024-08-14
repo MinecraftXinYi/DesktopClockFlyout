@@ -20,4 +20,13 @@ internal static class WidgetAppMethod
             await Task.Delay(30000);
         }
     }
+
+    public static async Task KeepFormOnCurrentVirtualDesktop(Form form)
+    {
+        while (!form.IsDisposed)
+        {
+            DeskWidgetFormTweak.SetFormOnCurrentVirtualDesktop(form.Handle);
+            await Task.Delay(500);
+        }
+    }
 }
