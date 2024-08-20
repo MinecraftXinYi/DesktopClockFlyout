@@ -3,17 +3,24 @@
 namespace Win32.Structs;
 
 [StructLayout(LayoutKind.Sequential)]
-public struct Size
+public struct SIZE
 {
-    public int X;
-    public int Y;
+    public int x;
+    public int y;
 }
 
 [StructLayout(LayoutKind.Sequential)]
-public struct Rect
+public struct RECT
 {
-    public int Left;
-    public int Top;
-    public int Right;
-    public int Bottom;
+    public int left;
+    public int top;
+    public int right;
+    public int bottom;
+}
+
+[StructLayout(LayoutKind.Sequential)]
+public struct POINT
+{
+    public int x;
+    public int y;
 }

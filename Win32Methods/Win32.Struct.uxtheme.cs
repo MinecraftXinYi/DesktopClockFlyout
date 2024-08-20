@@ -5,8 +5,8 @@ namespace Win32.Structs;
 [StructLayout(LayoutKind.Sequential)]
 public struct MARGINS
 {
-    public int Left;
-    public int Right;
-    public int Top;
-    public int Bottom;
+    public int cxLeftWidth;
+    public int cxRightWidth;
+    public int cyTopHeight;
+    public int cyBottomHeight;
 }
