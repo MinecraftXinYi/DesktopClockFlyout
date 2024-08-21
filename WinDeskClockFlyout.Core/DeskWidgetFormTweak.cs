@@ -15,30 +15,42 @@ public static class DeskWidgetFormTweak
 {
     private static readonly VirtualDesktopManager vdManager = new();
 
-    public static void RemoveFormBroder(IntPtr windowHandle, bool enable = true)
+    public static void RemoveFormBroder(IntPtr windowHandle, bool enabled = true)
     {
         uint windStyle = (uint)User32Packaged.GetWindowLongPtr(windowHandle, WindowLongFlags.GWL_STYLE);
-        if (enable) windStyle &= ~(WindowStyles.WS_CAPTION | WindowStyles.WS_SIZEBOX | WindowStyles.WS_BORDER);
+        if (enabled) windStyle &= ~(WindowStyles.WS_CAPTION | WindowStyles.WS_SIZEBOX | WindowStyles.WS_BORDER);
         else windStyle |= WindowStyles.WS_CAPTION | WindowStyles.WS_SIZEBOX | WindowStyles.WS_BORDER;
         User32Packaged.SetWindowLongPtr(windowHandle, WindowLongFlags.GWL_STYLE, new IntPtr(windStyle));
         uint windExStyle = (uint)User32Packaged.GetWindowLongPtr(windowHandle, WindowLongFlags.GWL_EXSTYLE);
-        if (enable) windExStyle &= ~WindowStylesEx.WS_EX_DLGMODALFRAME;
+        if (enabled) windExStyle &= ~WindowStylesEx.WS_EX_DLGMODALFRAME;
         else windExStyle |= WindowStylesEx.WS_EX_DLGMODALFRAME;
         User32Packaged.SetWindowLongPtr(windowHandle, WindowLongFlags.GWL_EXSTYLE, new IntPtr(windExStyle));
     }
 
-    public static void RemoveFormSysMenu(IntPtr windowHandle, bool enable = true)
+    public static void RemoveFormSysMenu(IntPtr windowHandle, bool enabled = true)
     {
         uint windStyle = (uint)User32Packaged.GetWindowLongPtr(windowHandle, WindowLongFlags.GWL_STYLE);
-        if (enable) windStyle &= ~WindowStyles.WS_SYSMENU;
+        if (enabled) windStyle &= ~WindowStyles.WS_SYSMENU;
         else windStyle |= WindowStyles.WS_SYSMENU;
         User32Packaged.SetWindowLongPtr(windowHandle, WindowLongFlags.GWL_STYLE, new IntPtr(windStyle));
     }
 
-    public static void SetDesktopWidgetFormZ(IntPtr windowHandle)
+    public static void SetDesktopWidgetFormZPos(IntPtr windowHandle)
     {
-        User32.SetWindowPos(windowHandle, WidgetFormHelper.GetShellDesktopParentHandle(),
+        User32.SetWindowPos(windowHandle, ShellDesktopFormHelper.GetShellDesktopParentHandle(),
             0, 0, 0, 0, WindowPosFlags.SWP_NOSIZE | WindowPosFlags.SWP_NOMOVE | WindowPosFlags.SWP_NOACTIVATE);
+    }
+
+    public static void HideFormInTaskViewsAndShowFormOnAllVirtualDesktops(IntPtr windowHandle, bool enabled = true)
+    {
+        uint windStyle = (uint)User32Packaged.GetWindowLongPtr(windowHandle, WindowLongFlags.GWL_STYLE);
+        if (enabled) windStyle |= WindowStyles.WS_POPUP;
+        else windStyle &= ~WindowStyles.WS_POPUP;
+        User32Packaged.SetWindowLongPtr(windowHandle, WindowLongFlags.GWL_STYLE, new IntPtr(windStyle));
+        uint windExStyle = (uint)User32Packaged.GetWindowLongPtr(windowHandle, WindowLongFlags.GWL_EXSTYLE);
+        if (enabled) { windExStyle |= WindowStylesEx.WS_EX_TOOLWINDOW; windExStyle &= ~WindowStylesEx.WS_EX_APPWINDOW; }
+        else { windExStyle &= ~WindowStylesEx.WS_EX_TOOLWINDOW; windExStyle |= WindowStylesEx.WS_EX_APPWINDOW; }
+        User32Packaged.SetWindowLongPtr(windowHandle, WindowLongFlags.GWL_EXSTYLE, new IntPtr(windExStyle));
     }
 
     public static async void SetFormOnCurrentVirtualDesktop(IntPtr windowHandle)

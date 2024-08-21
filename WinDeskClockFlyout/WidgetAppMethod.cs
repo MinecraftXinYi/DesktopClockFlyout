@@ -9,14 +9,14 @@ internal static class WidgetAppMethod
 {
     public static void KeepWidgetFormOnActivated(object sender, EventArgs e)
     {
-        DeskWidgetFormTweak.SetDesktopWidgetFormZ((sender as Form).Handle);
+        DeskWidgetFormTweak.SetDesktopWidgetFormZPos((sender as Form).Handle);
     }
 
     public static async Task KeepWidgetFormBackgroundTask(Form form)
     {
         while (!form.IsDisposed)
         {
-            DeskWidgetFormTweak.SetDesktopWidgetFormZ(form.Handle);
+            DeskWidgetFormTweak.SetDesktopWidgetFormZPos(form.Handle);
             await Task.Delay(30000);
         }
     }

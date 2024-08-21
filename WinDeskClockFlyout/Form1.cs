@@ -35,8 +35,10 @@ namespace MileXamlBlankAppNetFramework
             BackColor = Color.Black;
             DeskWidgetFormTweak.RemoveFormBroder(Handle);
             DeskWidgetFormTweak.RemoveFormSysMenu(Handle);
-            DeskWidgetFormTweak.SetFormCompositionAttribute(Handle, null/*Color.FromArgb(130, 150, 255, 1)*/, 1);
-            DeskWidgetFormTweak.SetDesktopWidgetFormZ(Handle);
+            DeskWidgetFormTweak.HideFormInTaskViewsAndShowFormOnAllVirtualDesktops(Handle);
+            DeskWidgetFormTweak.SetFormCompositionAttribute(Handle, null/*Color.FromArgb(130, 150, 255, 1)*/,
+                DeskWidgetFormTweak.FormCompAccentState.Accent_Blur);
+            DeskWidgetFormTweak.SetDesktopWidgetFormZPos(Handle);
             Activated += WidgetAppMethod.KeepWidgetFormOnActivated;
             Task.Factory.StartNew(async () => await WidgetAppMethod.KeepWidgetFormBackgroundTask(this), TaskCreationOptions.LongRunning);
             Task.Factory.StartNew(async () => await WidgetAppMethod.KeepFormOnCurrentVirtualDesktop(this), TaskCreationOptions.LongRunning);
