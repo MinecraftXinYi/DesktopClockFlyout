@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>WinDeskClockFlyout.Core</RootNamespace>
     <AssemblyName>WinDeskClockFlyout.Core</AssemblyName>
+    <RootNamespace>WinDeskClockFlyout.Core</RootNamespace>
     <LangVersion>10.0</LangVersion>
   </PropertyGroup>
 
