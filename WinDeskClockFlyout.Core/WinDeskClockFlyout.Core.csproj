@@ -1,10 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Product>Windows Desktop Clock Flyout Core</Product>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>WinDeskClockFlyout.Core</AssemblyName>
     <RootNamespace>WinDeskClockFlyout.Core</RootNamespace>
     <LangVersion>10.0</LangVersion>
+    <ProductVersion>1.0.0.0</ProductVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyTitle>Windows Desktop Clock Flyout Core Library</AssemblyTitle>
+    <Company>MinecraftXinYi Person</Company>
   </PropertyGroup>
 
 </Project>

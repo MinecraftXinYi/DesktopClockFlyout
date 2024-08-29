@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Product>Windows Desktop Clock Flyout App</Product>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net48</TargetFramework>
     <TargetPlatformVersion>10.0.22621.0</TargetPlatformVersion>
@@ -8,17 +9,21 @@
     <AssemblyName>WinDeskClockFlyout</AssemblyName>
     <RootNamespace>WinDeskClockFlyout</RootNamespace>
     <ApplicationManifest>App.manifest</ApplicationManifest>
+    <UseWindowsForms>true</UseWindowsForms>
     <!-- Add workaround for WinRT support in the old .NET SDK -->
     <SupportedOSPlatformVersion>$(TargetPlatformMinVersion)</SupportedOSPlatformVersion>
     <Platforms>AnyCPU;x64</Platforms>
     <LangVersion>12.0</LangVersion>
-    <UseWindowsForms>true</UseWindowsForms>
+    <ProductVersion>1.0.0.0</ProductVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyTitle>Windows Desktop Clock Flyout Application</AssemblyTitle>
+    <Company>MinecraftXinYi Person</Company>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="Mile.Xaml" Version="2.3.1064" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <ProjectReference Include="..\WinDeskClockFlyout.Core\WinDeskClockFlyout.Core.csproj" />
   </ItemGroup>
