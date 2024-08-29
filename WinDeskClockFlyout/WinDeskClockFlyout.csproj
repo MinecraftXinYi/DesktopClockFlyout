@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <Product>Windows Desktop Clock Flyout App</Product>
     <OutputType>WinExe</OutputType>
