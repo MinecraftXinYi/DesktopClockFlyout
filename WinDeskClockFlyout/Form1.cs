@@ -1,13 +1,9 @@
 ﻿using Mile.Xaml;
 using MileXamlBlankAppNetFrameworkModern;
 using System;
-using System.Data;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
 using WinDeskClockFlyout;
-using WinDeskClockFlyout.Core;
 
 namespace MileXamlBlankAppNetFramework
 {
@@ -32,16 +28,10 @@ namespace MileXamlBlankAppNetFramework
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            BackColor = Color.Black;
-            DeskWidgetFormTweak.RemoveFormBroder(Handle);
-            DeskWidgetFormTweak.RemoveFormSysMenu(Handle);
-            DeskWidgetFormTweak.HideFormInTaskViewsAndShowFormOnAllVirtualDesktops(Handle);
-            DeskWidgetFormTweak.SetFormCompositionAttribute(Handle, null/*Color.FromArgb(130, 150, 255, 1)*/,
-                DeskWidgetFormTweak.FormCompAccentState.Accent_Blur);
-            DeskWidgetFormTweak.SetDesktopWidgetFormZPos(Handle);
-            Activated += WidgetAppMethod.KeepWidgetFormOnActivated;
-            Task.Factory.StartNew(async () => await WidgetAppMethod.KeepWidgetFormBackgroundTask(this), TaskCreationOptions.LongRunning);
-            Task.Factory.StartNew(async () => await WidgetAppMethod.KeepFormOnCurrentVirtualDesktop(this), TaskCreationOptions.LongRunning);
+            WidgetAppMethod.SetDesktopWidgetFormStyle(Handle);
+            WidgetAppMethod.SetDesktopWidgetFormVisibility(Handle);
+            Activated += WidgetAppMethod.KeepWidgetFormZPosOnActivated;
+            Task.Factory.StartNew(async () => await WidgetAppMethod.KeepWidgetFormVisibilityTask(this), TaskCreationOptions.LongRunning);
         }
 
     }

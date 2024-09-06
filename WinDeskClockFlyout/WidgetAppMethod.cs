@@ -7,26 +7,31 @@ namespace WinDeskClockFlyout;
 
 internal static class WidgetAppMethod
 {
-    public static void KeepWidgetFormOnActivated(object sender, EventArgs e)
+    internal static void SetDesktopWidgetFormStyle(IntPtr windhandle)
     {
-        DeskWidgetFormTweak.SetDesktopWidgetFormZPos((sender as Form).Handle);
+        DeskWidgetFormTweak.RemoveFormBroder(windhandle);
+        DeskWidgetFormTweak.RemoveFormSysMenu(windhandle);
     }
 
-    public static async Task KeepWidgetFormBackgroundTask(Form form)
+    internal static void SetDesktopWidgetFormVisibility(IntPtr windhandle)
+    {
+        DeskWidgetFormTweak.HideFormInTaskViewAndShowFormOnAllVirtualDesktops(windhandle);
+        DeskWidgetFormTweak.SetDesktopWidgetFormZPos(windhandle);
+    }
+
+    internal static void KeepWidgetFormZPosOnActivated(object sender, EventArgs e)
+    {
+        if (sender is Form)
+            if (!(sender as Form).IsDisposed) DeskWidgetFormTweak.SetDesktopWidgetFormZPos((sender as Form).Handle);
+        else throw new ArgumentException("The event sender is not a form.");
+    }
+
+    internal static async Task KeepWidgetFormVisibilityTask(Form form)
     {
         while (!form.IsDisposed)
         {
-            DeskWidgetFormTweak.SetDesktopWidgetFormZPos(form.Handle);
-            await Task.Delay(30000);
-        }
-    }
-
-    public static async Task KeepFormOnCurrentVirtualDesktop(Form form)
-    {
-        while (!form.IsDisposed)
-        {
-            DeskWidgetFormTweak.SetFormOnCurrentVirtualDesktop(form.Handle);
-            await Task.Delay(500);
+            await Task.Delay(20000);
+            if (!form.IsDisposed) SetDesktopWidgetFormVisibility(form.Handle);
         }
     }
 }

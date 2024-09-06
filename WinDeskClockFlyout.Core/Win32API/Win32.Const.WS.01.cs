@@ -1,6 +1,6 @@
-﻿namespace Win32.Constants;
+﻿namespace Win32;
 
-public static partial class WindowStyles
+public static partial class Win32Const
 {
     public const uint WS_MAXIMIZEBOX = 0x00010000;
     public const uint WS_MINIMIZEBOX = 0x00020000;
@@ -11,9 +11,6 @@ public static partial class WindowStyles
 
     public const uint WS_OVERLAPPED = 0x00000000;
     public const uint WS_TILED = WS_OVERLAPPED;
-}
 
-public static partial class WindowLongFlags
-{
     public const int GWL_STYLE = -16;
 }

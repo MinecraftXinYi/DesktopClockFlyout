@@ -1,6 +1,6 @@
-﻿namespace Win32.Constants;
+﻿namespace Win32;
 
-public static partial class WindowStyles
+public static partial class Win32Const
 {
     public const uint WS_CAPTION = 0x00C00000;
     public const uint WS_SYSMENU = 0x00080000;
