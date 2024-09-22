@@ -33,12 +33,12 @@ namespace WinDeskClockFlyout
             });
         }
 
-        public LiteSystemTimer Timer;
+        public LiteClockTimer Timer;
 
         public UWPTextClockFlyout()
         {
             this.InitializeComponent();
-            if (Timer == null) Timer = new LiteSystemTimer();
+            if (Timer == null) Timer = new ();
 
             this.Loaded += Load;
             this.Unloaded += Unload;
@@ -46,7 +46,7 @@ namespace WinDeskClockFlyout
 
         private void Load(object sender, RoutedEventArgs e)
         {
-            Timer.PropertyChanged += TimeDateUpdate;
+            Timer.DateTimeChanged += TimeDateUpdate;
         }
 
         //TextBlock时钟显示实现
@@ -54,21 +54,21 @@ namespace WinDeskClockFlyout
         {
             switch (e.PropertyName)
             {
-                case nameof(LiteSystemTimer.Second):
+                case nameof(LiteClockTimer.DateTimeNow):
                     await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                     {
                         if (!this.Use12HourClock)
                         {
                             //24小时制时钟
-                            TimeBlock.Text = Timer.Second.ToString("HH:mm:ss");
+                            TimeBlock.Text = Timer.DateTimeNow.ToString("HH:mm:ss");
                         }
                         else
                         {
                             //12小时制时钟
-                            TimeBlock.Text = Timer.Second.ToString("hh:mm:ss tt");
+                            TimeBlock.Text = Timer.DateTimeNow.ToString("hh:mm:ss tt");
                         }
                         //日期
-                        DateBlock.Text = Timer.Second.ToString("yyyy MMMM dd dddd");
+                        DateBlock.Text = Timer.DateTimeNow.ToString("yyyy MMMM dd dddd");
                     });
                     break;
             }
@@ -76,7 +76,7 @@ namespace WinDeskClockFlyout
 
         private void Unload(object sender, RoutedEventArgs e)
         {
-            Timer.PropertyChanged -= TimeDateUpdate;
+            Timer.DateTimeChanged -= TimeDateUpdate;
             this.Loaded -= Load;
             this.Unloaded -= Unload;
         }

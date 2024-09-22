@@ -5,7 +5,9 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinDeskClockFlyout", "WinDeskClockFlyout\WinDeskClockFlyout.csproj", "{7FD6EE08-3E37-4B72-A696-7887FDD03319}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinDeskClockFlyout.Core", "WinDeskClockFlyout.Core\WinDeskClockFlyout.Core.csproj", "{32F5A6D4-989F-4370-80E0-7B0360835405}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinDeskWidgetTweaks", "WinDeskWidgetTweaks\WinDeskWidgetTweaks.csproj", "{32F5A6D4-989F-4370-80E0-7B0360835405}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.LiteClockTimer", "System.LiteClockTimer\System.LiteClockTimer.csproj", "{674AE501-9E49-453F-8341-B3CB1A060EEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{32F5A6D4-989F-4370-80E0-7B0360835405}.Release|Any CPU.Build.0 = Release|Any CPU
 		{32F5A6D4-989F-4370-80E0-7B0360835405}.Release|x64.ActiveCfg = Release|Any CPU
 		{32F5A6D4-989F-4370-80E0-7B0360835405}.Release|x64.Build.0 = Release|Any CPU
+		{674AE501-9E49-453F-8341-B3CB1A060EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674AE501-9E49-453F-8341-B3CB1A060EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674AE501-9E49-453F-8341-B3CB1A060EEC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{674AE501-9E49-453F-8341-B3CB1A060EEC}.Debug|x64.Build.0 = Debug|Any CPU
+		{674AE501-9E49-453F-8341-B3CB1A060EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674AE501-9E49-453F-8341-B3CB1A060EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674AE501-9E49-453F-8341-B3CB1A060EEC}.Release|x64.ActiveCfg = Release|Any CPU
+		{674AE501-9E49-453F-8341-B3CB1A060EEC}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

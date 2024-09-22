@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Product>.NET System Lite Clock Timer Library</Product>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <LangVersion>10.0</LangVersion>
+    <ProductVersion>1.0.0.0</ProductVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyTitle>System.LiteClockTimer</AssemblyTitle>
+    <Company>MinecraftXinYi Person</Company>
+  </PropertyGroup>
+
+</Project>

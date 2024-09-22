@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinDeskClockFlyout.Core;
+using WinDeskWidgetTweaks;
 
 namespace WinDeskClockFlyout;
 

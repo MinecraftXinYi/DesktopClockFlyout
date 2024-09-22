@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Win32;
 
-namespace WinDeskClockFlyout.Core;
+namespace WinDeskWidgetTweaks;
 
 public static class DeskWidgetFormTweak
 {

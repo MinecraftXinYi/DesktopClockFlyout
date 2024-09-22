@@ -24,7 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WinDeskClockFlyout.Core\WinDeskClockFlyout.Core.csproj" />
+    <ProjectReference Include="..\System.LiteClockTimer\System.LiteClockTimer.csproj" />
+    <ProjectReference Include="..\WinDeskWidgetTweaks\WinDeskWidgetTweaks.csproj" />
   </ItemGroup>
 
 </Project>

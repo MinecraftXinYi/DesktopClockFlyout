@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Product>Windows Desktop Clock Flyout Core</Product>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>WinDeskClockFlyout.Core</RootNamespace>
+    <Product>Windows Desktop Widgets Tweaks</Product>
+    <TargetFramework>netstandard1.1</TargetFramework>
+    <RootNamespace>WinDeskWidgetTweaks</RootNamespace>
     <LangVersion>10.0</LangVersion>
     <ProductVersion>1.0.0.0</ProductVersion>
     <FileVersion>1.0.0.0</FileVersion>
-    <AssemblyTitle>Windows Desktop Clock Flyout Core Library</AssemblyTitle>
+    <AssemblyTitle>Windows Desktop Widgets Tweaks Core Library</AssemblyTitle>
     <Company>MinecraftXinYi Person</Company>
   </PropertyGroup>
 
