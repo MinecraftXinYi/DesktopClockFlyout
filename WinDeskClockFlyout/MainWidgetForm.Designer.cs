@@ -1,6 +1,6 @@
-﻿namespace MileXamlBlankAppNetFramework
+﻿namespace WinDeskClockFlyout
 {
-    partial class Form1
+    partial class MainWidgetForm
     {
         /// <summary>
         /// Required designer variable.

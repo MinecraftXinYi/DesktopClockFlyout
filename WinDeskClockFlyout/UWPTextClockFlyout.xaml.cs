@@ -1,45 +1,24 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Controls;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace WinDeskClockFlyout
 {
     public sealed partial class UWPTextClockFlyout : UserControl
     {
-        public bool Use12HourClock { get; set; } = false;
-        public async void SetFontSizeX(int fontSizeX)
-        {
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-            {
-                TimeBlock.FontSize = fontSizeX * 4;
-                DateBlock.FontSize = fontSizeX * 2;
-            });
-        }
-        public async void SetFontFamily(FontFamily fontFamily)
-        {
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-            {
-                TimeBlock.FontFamily = fontFamily;
-                DateBlock.FontFamily = fontFamily;
-            });
-        }
+        public LiteClockTimer Timer {  get; set; }
 
-        public LiteClockTimer Timer;
+        public string DateDisplayFormat { get; set; } = "D";
+
+        public bool Use12HourClock { get; set; } = false;
 
         public UWPTextClockFlyout()
         {
             this.InitializeComponent();
             if (Timer == null) Timer = new ();
-
             this.Loaded += Load;
             this.Unloaded += Unload;
         }
@@ -57,7 +36,7 @@ namespace WinDeskClockFlyout
                 case nameof(LiteClockTimer.DateTimeNow):
                     await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                     {
-                        if (!this.Use12HourClock)
+                        if (!Use12HourClock)
                         {
                             //24小时制时钟
                             TimeBlock.Text = Timer.DateTimeNow.ToString("HH:mm:ss");
@@ -68,7 +47,7 @@ namespace WinDeskClockFlyout
                             TimeBlock.Text = Timer.DateTimeNow.ToString("hh:mm:ss tt");
                         }
                         //日期
-                        DateBlock.Text = Timer.DateTimeNow.ToString("yyyy MMMM dd dddd");
+                        DateBlock.Text = Timer.DateTimeNow.ToString(DateDisplayFormat);
                     });
                     break;
             }
@@ -79,6 +58,24 @@ namespace WinDeskClockFlyout
             Timer.DateTimeChanged -= TimeDateUpdate;
             this.Loaded -= Load;
             this.Unloaded -= Unload;
+        }
+
+        public async void SetFontSizeClient(int fontSizeClient)
+        {
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                TimeBlock.FontSize = fontSizeClient * 4;
+                DateBlock.FontSize = fontSizeClient * 2;
+            });
+        }
+
+        public async void SetFontFamily(FontFamily fontFamily)
+        {
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                TimeBlock.FontFamily = fontFamily;
+                DateBlock.FontFamily = fontFamily;
+            });
         }
     }
 }

@@ -24,8 +24,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mile.Xaml.Media.NETFx\Mile.Xaml.Media.NETFx.csproj" />
     <ProjectReference Include="..\System.LiteClockTimer\System.LiteClockTimer.csproj" />
     <ProjectReference Include="..\WinDeskWidgetTweaks\WinDeskWidgetTweaks.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Mile.Xaml\Assets\NoiseAsset_256x256_PNG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

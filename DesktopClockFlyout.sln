@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinDeskClockFlyout", "WinDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinDeskWidgetTweaks", "WinDeskWidgetTweaks\WinDeskWidgetTweaks.csproj", "{32F5A6D4-989F-4370-80E0-7B0360835405}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.LiteClockTimer", "System.LiteClockTimer\System.LiteClockTimer.csproj", "{674AE501-9E49-453F-8341-B3CB1A060EEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.LiteClockTimer", "System.LiteClockTimer\System.LiteClockTimer.csproj", "{674AE501-9E49-453F-8341-B3CB1A060EEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mile.Xaml.Media.NETFx", "Mile.Xaml.Media.NETFx\Mile.Xaml.Media.NETFx.csproj", "{CDF68A38-E808-4FA3-A271-FD0A1DE8829C}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Mile.Xaml.Media.NETShared", "Mile.Xaml.Media.NETShared\Mile.Xaml.Media.NETShared.shproj", "{FFA97E84-85F1-4723-A6C8-CBC5A1CC2306}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,11 +45,23 @@ Global
 		{674AE501-9E49-453F-8341-B3CB1A060EEC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{674AE501-9E49-453F-8341-B3CB1A060EEC}.Release|x64.ActiveCfg = Release|Any CPU
 		{674AE501-9E49-453F-8341-B3CB1A060EEC}.Release|x64.Build.0 = Release|Any CPU
+		{CDF68A38-E808-4FA3-A271-FD0A1DE8829C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF68A38-E808-4FA3-A271-FD0A1DE8829C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF68A38-E808-4FA3-A271-FD0A1DE8829C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CDF68A38-E808-4FA3-A271-FD0A1DE8829C}.Debug|x64.Build.0 = Debug|Any CPU
+		{CDF68A38-E808-4FA3-A271-FD0A1DE8829C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF68A38-E808-4FA3-A271-FD0A1DE8829C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF68A38-E808-4FA3-A271-FD0A1DE8829C}.Release|x64.ActiveCfg = Release|Any CPU
+		{CDF68A38-E808-4FA3-A271-FD0A1DE8829C}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3944F1BB-D6CE-49DF-8D36-65CDB8488D76}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Mile.Xaml.Media.NETShared\Mile.Xaml.Media.NETShared.projitems*{cdf68a38-e808-4fa3-a271-fd0a1de8829c}*SharedItemsImports = 5
+		Mile.Xaml.Media.NETShared\Mile.Xaml.Media.NETShared.projitems*{ffa97e84-85f1-4723-a6c8-cbc5a1cc2306}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

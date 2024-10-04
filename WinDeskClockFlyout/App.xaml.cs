@@ -1,7 +1,7 @@
 ﻿using Mile.Xaml;
 using Windows.UI.Xaml;
 
-namespace MileXamlBlankAppNetFrameworkModern
+namespace WinDeskClockFlyout
 {
     sealed partial class App : Application
     {

@@ -1,8 +1,7 @@
-﻿using MileXamlBlankAppNetFramework;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
-namespace MileXamlBlankAppNetFrameworkModern
+namespace WinDeskClockFlyout
 {
     public static class Program
     {
@@ -14,7 +13,7 @@ namespace MileXamlBlankAppNetFrameworkModern
 
             App app = new();
 
-            Application.Run(new Form1());
+            Application.Run(new MainWidgetForm());
 
             app.Close();
         }

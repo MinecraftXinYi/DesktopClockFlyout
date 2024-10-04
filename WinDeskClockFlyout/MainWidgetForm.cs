@@ -1,17 +1,15 @@
 ﻿using Mile.Xaml;
-using MileXamlBlankAppNetFrameworkModern;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinDeskClockFlyout;
 
-namespace MileXamlBlankAppNetFramework
+namespace WinDeskClockFlyout
 {
-    public partial class Form1 : Form
+    public partial class MainWidgetForm : Form
     {
         private readonly WindowsXamlHost xamlHost;
 
-        public Form1()
+        public MainWidgetForm()
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
@@ -20,7 +18,7 @@ namespace MileXamlBlankAppNetFramework
             this.Controls.Add(xamlHost);
             xamlHost.AutoSize = true;
             xamlHost.Dock = DockStyle.Fill;
-            xamlHost.Child = new MainPage();
+            xamlHost.Child = new MainPage(this);
 
             this.Load += Form1_Load;
 
